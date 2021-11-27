@@ -41,7 +41,8 @@
             "ObjectPattern": { "multiline": true },
             "ImportDeclaration": { "multiline": true },
             "ExportDeclaration": { "multiline": true }
-        }]
+        }],
+        "react/destructuring-assignment": "off"
     },
     "ignorePatterns": ["*.css", "*.svg"]
 }
