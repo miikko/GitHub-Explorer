@@ -42,7 +42,9 @@
             "ImportDeclaration": { "multiline": true },
             "ExportDeclaration": { "multiline": true }
         }],
-        "react/destructuring-assignment": "off"
+        "react/destructuring-assignment": "off",
+        "no-plusplus": "off",
+        "operator-linebreak": ["error", "after"]
     },
     "ignorePatterns": ["*.css", "*.svg"]
 }
