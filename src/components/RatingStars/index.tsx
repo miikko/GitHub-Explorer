@@ -26,7 +26,10 @@ const RatingStars = (props: Props) => {
         <StarIcon
           key={`rating-star-${props.id}-${i}`}
           aria-label={`Rating star ${backgroundColor}`}
-          style={{ fill: backgroundColor }}
+          style={{
+            fill: backgroundColor,
+            cursor: props.onClick ? 'pointer' : 'inherit',
+          }}
           onClick={() => (props.onClick ? props.onClick(i) : undefined)}
         />
       );
