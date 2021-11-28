@@ -44,7 +44,10 @@
         }],
         "react/destructuring-assignment": "off",
         "no-plusplus": "off",
-        "operator-linebreak": ["error", "after"]
+        "operator-linebreak": ["error", "after"],
+        "implicit-arrow-linebreak": "off",
+        "react/jsx-curly-newline": "off",
+        "react/require-default-props": "off"
     },
     "ignorePatterns": ["*.css", "*.svg"]
 }
