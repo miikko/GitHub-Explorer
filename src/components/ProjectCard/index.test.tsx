@@ -9,7 +9,6 @@ const mockProject = {
   rating: 5,
   createdAt: new Date('2021-11-19T13:46:36.211Z'),
 };
-// Finish this and commit src/components/ProjectCard + src/initialProjects.ts
 
 const handleProjectRemoveMock = jest.fn();
 
@@ -29,7 +28,7 @@ afterEach(() => {
 describe('ProjectCard', () => {
   it('shows correct project information', () => {
     screen.getByText(mockProject.name);
-    expect(document.querySelectorAll('.rating-star-yellow').length).toBe(
+    expect(screen.getAllByLabelText('Rating star yellow').length).toBe(
       mockProject.rating
     );
   });
@@ -44,7 +43,6 @@ describe('ProjectCard', () => {
 
   it('calls "onProjectRemove" prop when close-button is pressed', () => {
     expect(handleProjectRemoveMock).toHaveBeenCalledTimes(0);
-    screen.debug();
     userEvent.click(screen.getByLabelText('Remove project button'));
     expect(handleProjectRemoveMock).toHaveBeenCalledTimes(1);
   });
