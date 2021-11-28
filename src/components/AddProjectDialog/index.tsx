@@ -50,18 +50,25 @@ const AddProjectDialog = (props: Props) => {
         props.onClose();
       }}
     >
-      <DialogTitle>Add Project</DialogTitle>
+      <DialogTitle>Add New GitHub Project</DialogTitle>
       <DialogContent>
         <TextField
+          required
+          fullWidth
           onChange={(e) => setName(e.target.value)}
           autoFocus
           label="Name"
         />
         <TextField
+          required
+          fullWidth
+          margin="normal"
           onChange={(e) => setUrl(e.target.value)}
           label="GitHub URL"
         />
-        <DialogContentText>Assign rating:</DialogContentText>
+        <DialogContentText style={{ marginTop: 20 }}>
+          Assign rating:
+        </DialogContentText>
         <RatingStars
           id="new-project-rating"
           rating={rating}
