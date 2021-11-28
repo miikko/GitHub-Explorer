@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Card from '@material-ui/core/Card';
@@ -8,7 +9,7 @@ import { GitHubProject } from '../../interfaces';
 
 interface Props {
   /**
-   * This Card's fields are filled based on the values of this object.
+   * This component's is constructed based on the property-values of this object.
    */
   project: GitHubProject;
   /**
@@ -26,8 +27,11 @@ const ProjectCard = (props: Props) => {
     '#5595ff66',
     '#ff795566',
   ];
-  const backgroundColor =
-    colorPalette[Math.floor(Math.random() * colorPalette.length)];
+  // useMemo is here so that background color is not recalculated on each render.
+  const backgroundColor = useMemo(
+    () => colorPalette[Math.floor(Math.random() * colorPalette.length)],
+    [props.project.id]
+  );
 
   return (
     <Card
